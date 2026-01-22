@@ -5,9 +5,9 @@ if (empty($_SESSION['admin_logged'])) {
     header("Location: admin_login.php");
     exit;
 }
-
+// Mencionamos a config para que mire las variables
 require_once __DIR__ . '/config.php';
-
+// Manejo de excepciones
 try {
     $conn = new PDO(
         "pgsql:host=$host;dbname=$db",
