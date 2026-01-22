@@ -1,5 +1,5 @@
 <?php
-
+// Conexión a la base de datos 
 require_once 'config.php';
 
 try {
@@ -20,7 +20,7 @@ if (!$nombre || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     die("Datos inválidos");
 }
 
-// 1️⃣ Guardar en DB
+// Guardar en DB
 try {
     $stmt = $conn->prepare(
         "INSERT INTO fans (nombre, email) VALUES (:n, :e)"
@@ -41,7 +41,7 @@ try {
 }
 
 
-// 2️⃣ Enviar email con Resend
+// Enviar email con Resend
 $emailData = [
     "from" => RESEND_FROM,
     "to" => [$email],
@@ -84,8 +84,9 @@ curl_close($ch);
 
 
 
-// 3️⃣ Redirigir (aunque el mail falle)
+// Redirigir (aunque el mail falle)
 header("Location: confirmation.php?nombre=" . urlencode($nombre));
 exit;
+
 
 
