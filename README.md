@@ -54,7 +54,7 @@ Las variables sensibles (DB, API keys, etc.) se gestionan mediante variables de 
 
 ---
 
-## ☁️ Deploy en Render
+## Deploy en Render
 
 La aplicación se encuentra desplegada en **Render**, utilizando:
 
@@ -63,7 +63,7 @@ La aplicación se encuentra desplegada en **Render**, utilizando:
 
 **Importante (Plan FREE):**
 - La base de datos tiene una duración aproximada de **30 días**
-- Al expirar, debe recrearse manualmente
+- Al expirar, debe recrearse manualmente desde la pagina de Render
 - Esto implica la pérdida de los datos anteriores
 
 ---
