@@ -1,0 +1,262 @@
+/* --- 1. CONFIGURACIÓN DE FUENTES --- */
+html, body, p, div, h1, h2, h3, h4, h5, h6, a, span:not(.material-icons), input, label, button, td, th {
+    font-family: 'Questrial', sans-serif !important;
+}
+
+/* --- 2. ESTILOS BASE DEL CUERPO --- */
+body {
+    background: #4f006c;
+    background: linear-gradient(to left, #4f006c, #ff00ff);
+    font-weight: 400;
+    transition: background 0.5s ease;
+    margin: 0;
+    min-height: 100vh;
+}
+
+/* --- 3. NAVBAR --- */
+.nav-custom {
+    background-color: #ede7f6 !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.5s ease;
+}
+
+.nav-custom .brand-logo, .nav-custom ul a, .nav-custom ul a i, .nav-custom .brand-logo i {
+    color: #2e003e !important;
+    font-weight: 500 !important;
+}
+
+/* --- 4. TÍTULOS DINÁMICOS --- */
+h1.header.dynamic-header {
+    font-weight: 400 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 8px !important;
+    font-size: 3.5rem !important;
+    margin-bottom: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffffff 40%, #ff00ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* --- 5. MODO NOCHE (GLOBAL) --- */
+body.dark-mode { background: #121212 !important; color: #ffffff; }
+body.dark-mode .nav-custom { background-color: #1a1a1a !important; border-bottom: 1px solid #d500f9; }
+body.dark-mode .nav-custom .brand-logo, body.dark-mode .nav-custom ul a { 
+    color: #ff00ff !important; 
+    text-shadow: 0 0 8px rgba(255, 0, 255, 0.6); 
+}
+body.dark-mode .dynamic-header {
+    background: none !important;
+    -webkit-text-fill-color: #d500f9 !important;
+    text-shadow: 0 0 15px rgba(213, 0, 249, 0.8) !important;
+}
+
+/* --- ESTILO DE LA TABLA DE SHOWS --- */
+
+.synth-table-container {
+    background: rgba(15, 0, 30, 0.6) !important; /* Fondo tipo cristal */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(213, 0, 249, 0.3);
+    border-radius: 15px !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.synth-table {
+    border-collapse: collapse;
+    color: #fff;
+}
+
+/* Cabecera de la tabla */
+.synth-table thead {
+    background: rgba(213, 0, 249, 0.2);
+}
+
+.synth-table th {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    color: #ff00ff;
+    border-bottom: 2px solid #d500f9 !important;
+}
+
+/* Filas al pasar el mouse */
+.synth-table.highlight tbody tr:hover {
+    background-color: rgba(213, 0, 249, 0.1) !important;
+    transition: 0.3s;
+}
+
+.synth-table td {
+    padding: 20px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Badges de estado (Sold Out / Available) */
+.status-badge {
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+}
+
+.status-badge.sold-out {
+    background: rgba(255, 0, 85, 0.2);
+    border: 1px solid #ff0055;
+    color: #ff0055;
+    text-shadow: 0 0 5px #ff0055;
+}
+
+.status-badge.available {
+    background: rgba(0, 255, 153, 0.2);
+    border: 1px solid #00ff99;
+    color: #00ff99;
+    text-shadow: 0 0 5px #00ff99;
+}
+
+/* Ajuste para el título de la sección */
+.show-title {
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+/* Adaptación Modo Noche */
+body.dark-mode .synth-table-container {
+    background: #000000 !important;
+    border: 1px solid #d500f9;
+    box-shadow: 0 0 15px rgba(213, 0, 249, 0.2);
+}
+
+/* --- 6. SECCIÓN LOSANGELES (RECUADRO DEL VIDEO) --- */
+.video-heartbeat-container {
+    margin-bottom: 40px;
+    padding: 30px; /* Espacio interno para que el video no toque el borde */
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    /* Modo Claro: Recuadro sobrio */
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Modo Noche: Recuadro Neón Púrpura */
+body.dark-mode .video-heartbeat-container {
+    background: #0a0a0a !important;
+    border: 2px solid #d500f9 !important;
+    box-shadow: 0 0 25px rgba(213, 0, 249, 0.4);
+    animation: neon-flicker-purple 4s infinite alternate;
+}
+
+/* Ajuste para los títulos dentro del recuadro */
+.video-header-text h4 {
+    margin-top: 0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+body.dark-mode .video-header-text h4 {
+    color: #d500f9 !important;
+    -webkit-text-fill-color: #d500f9 !important;
+    text-shadow: 0 0 10px rgba(213, 0, 249, 0.6) !important;
+}
+
+/* --- 7. FORMULARIO DE SUSCRIPCIÓN --- */
+form {
+    background: rgba(30, 0, 50, 0.5) !important; /* Tono oscuro para legibilidad */
+    border: 2px solid rgba(213, 0, 249, 0.3);
+    border-radius: 20px;
+    padding: 60px 40px !important;
+    margin: 40px auto !important;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+}
+
+body.dark-mode form {
+    background: #111111 !important;
+    border: 2px solid #ff00ff !important;
+    box-shadow: 0 0 20px rgba(213, 0, 249, 0.2);
+}
+
+.form-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(213, 0, 249, 0.5);
+}
+
+/* --- 8. INPUTS Y BOTONES --- */
+.input-field label { color: rgba(255, 255, 255, 0.7) !important; }
+.input-field input {
+    color: #fff !important;
+    border-bottom: 1px solid rgba(213, 0, 249, 0.5) !important;
+}
+.input-field input:focus {
+    border-bottom: 2px solid #ff00ff !important;
+    box-shadow: 0 1px 0 0 #ff00ff !important;
+}
+.input-field .prefix { color: #d500f9 !important; }
+
+.synth-btn {
+    background-color: #d500f9 !important;
+    border: 2px solid #ff00ff;
+    box-shadow: 0 0 15px #d500f9;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: 0.3s all ease;
+}
+.synth-btn:hover {
+    background-color: #ff00ff !important;
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ff00ff;
+}
+
+/* --- 9. REPRODUCTOR SHADOWS (AZUL ELÉCTRICO) --- */
+.player-container {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    transition: all 0.5s ease;
+}
+
+body.dark-mode .player-container {
+    background: #050505 !important;
+    border: 2px solid #00e5ff !important;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+    animation: neon-flicker-blue 5s infinite alternate;
+}
+
+body.dark-mode .player-container .form-title {
+    color: #00e5ff !important;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.8) !important;
+}
+
+/* --- 10. UTILERÍAS Y ANIMACIONES --- */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+}
+
+@keyframes neon-flicker-purple {
+    0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { box-shadow: 0 0 20px rgba(213, 0, 249, 0.4); }
+    20%, 22%, 24%, 55% { box-shadow: 0 0 5px rgba(213, 0, 249, 0.2); }
+}
+
+@keyframes neon-flicker-blue {
+    0%, 100% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
+    50% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); }
+}

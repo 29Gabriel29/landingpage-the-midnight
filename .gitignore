@@ -1,0 +1,16 @@
+# Config sensible
+config.php
+.env
+
+# Logs
+*.log
+
+# Archivos temporales
+*.tmp
+
+# Docker (si lo agrego despues)
+# docker-compose.override.yml
+
+# Sistema
+.DS_Store
+Thumbs.db
