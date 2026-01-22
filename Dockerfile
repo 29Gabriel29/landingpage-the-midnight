@@ -14,6 +14,6 @@ COPY . /var/www/html/
 # Permisos correctos
 RUN chown -R www-data:www-data /var/www/html
 
-# Apache escucha en 80 (Render lo maneja)
+# Apache escucha en 80 (Render lo gestiona)
 EXPOSE 80
 
