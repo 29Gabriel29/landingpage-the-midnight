@@ -1,19 +1,19 @@
-FROM node:18-alpine
+FROM php:8.2-apache
 
-# Directorio de trabajo dentro del contenedor
-WORKDIR /app
+# Instalamos extensiones necesarias para PostgreSQL
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql
 
-# Copiamos dependencias primero (mejora cache)
-COPY package.json yarn.lock ./
+# Habilitar mod_rewrite
+RUN a2enmod rewrite
 
-# Instalamos dependencias
-RUN yarn install --production
+# Copiamos el proyecto al docroot de Apache
+COPY . /var/www/html/
 
-# Copiamos el resto del proyecto
-COPY . .
+# Permisos correctos
+RUN chown -R www-data:www-data /var/www/html
 
-# Puerto que expone la app (ajustar si usás otro)
-EXPOSE 3000
+# Apache escucha en 80 (Render lo maneja)
+EXPOSE 80
 
-# Comando de inicio
-CMD ["yarn", "start"]
