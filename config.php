@@ -1,5 +1,5 @@
 <?php
-// Database
+// Database (Apunta a las variables de entorno de Render)
 define('DB_HOST', getenv('DB_HOST'));
 define('DB_NAME', getenv('DB_NAME'));
 define('DB_USER', getenv('DB_USER'));
@@ -12,6 +12,6 @@ $conn = new PDO(
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
-// Resend
+// Resend (API de envio de Emails)
 define('RESEND_API_KEY', getenv('RESEND_API_KEY'));
 define('RESEND_FROM', getenv('RESEND_FROM'));
