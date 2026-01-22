@@ -21,13 +21,25 @@ if (!$nombre || !$email || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
 }
 
 // 1️⃣ Guardar en DB
-$stmt = $conn->prepare(
-    "INSERT INTO fans (nombre, email) VALUES (:n, :e)"
-);
-$stmt->execute([
-    ':n' => $nombre,
-    ':e' => $email
-]);
+try {
+    $stmt = $conn->prepare(
+        "INSERT INTO fans (nombre, email) VALUES (:n, :e)"
+    );
+    $stmt->execute([
+        ':n' => $nombre,
+        ':e' => $email
+    ]);
+} catch (PDOException $e) {
+    // Email duplicado
+    if ($e->getCode() === '23505') {
+        header("Location: confirmation.php?error=duplicado");
+        exit;
+    }
+
+    // Otro error inesperado
+    die("Error al guardar los datos");
+}
+
 
 // 2️⃣ Enviar email con Resend
 $emailData = [
@@ -35,7 +47,7 @@ $emailData = [
     "to" => [$email],
     "subject" => "You're in ✨",
     "html" => "
-        <h1>You're in, $nombre.</h1>
+        <h1>You're in, " . htmlspecialchars($nombre) . ".</h1>
         <p>Welcome to the inner circle of <strong>The Midnight</strong>.</p>
         <p>Stay tuned for future transmissions.</p>
     "
@@ -75,4 +87,5 @@ curl_close($ch);
 // 3️⃣ Redirigir (aunque el mail falle)
 header("Location: confirmation.php?nombre=" . urlencode($nombre));
 exit;
+
 
