@@ -13,6 +13,12 @@ if ($error) {
     $mainMessage = "YOU'RE IN.";
     $subMessage  = "Welcome to the inner circle of The Midnight. Check your email for future transmissions.";
 }
+
+if ($error === 'duplicado') {
+    $mainMessage = "You're already in 👀";
+    $subMessage  = "That email is already subscribed to The Midnight.";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
