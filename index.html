@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css" type="text/css"/>
 </head>
-
+<!-- NAVBAR -->
 <body>
     <div class="navbar-fixed">
         <nav class="nav-custom"> 
@@ -27,7 +27,7 @@
             </div>
         </nav>
     </div>
-
+<!-- TITULO PRINCIPAL -->
     <div id="index-banner" class="banner-css">
         <div class="section no-pad-bot">
             <div class="container">
@@ -46,7 +46,7 @@
             <img class="responsive-img" src="image/tim_tyler.jpg" alt="The Midnight Band">
         </div>
     </div>
-
+<!-- SECCION INFO -->
     <div class="container">
         <div class="section">
             <div class="row">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-
+<!-- CARDS -->
     <div class="container section">
         <div class="row">
             <div class="col s12 m6">
@@ -103,7 +103,7 @@
             </div>
         </div>
     </div>
-
+<!-- FECHAS DE SHOWS -->
     <div class="tabla-section section">
         <div class="container">
             <h4 class="show-title purple-text text-accent-1">
@@ -127,32 +127,18 @@
             </div>
         </div>
     </div>
-
-    <div class="container" style="margin-top: 50px;">
-        
+<!-- VIDEO 1 -->	
+        <div class="container" style="margin-top: 50px;">
 	        <div class="video-heartbeat-container">
-
-         <div class="video-header-text center">
-
+            <div class="video-header-text center">
                 <h4 style="font-size: 1.8rem;">Listen to "Los Angeles"</h4>
-
-         <p class="white-text" style="opacity: 0.8;">The Most Famous track from The Midnight</p>
-
-           </div>
-
-         <div class="video-container shadow-neon">
-
-
-
+             	<p class="white-text" style="opacity: 0.8;">The Most Famous track from The Midnight</p>
+            </div>
+         	<div class="video-container shadow-neon">
                 <iframe src="https://www.youtube.com/embed/4rJ9z6IXnb8?rel=0" frameborder="0" allowfullscreen></iframe>
-
-
-
+    	    </div>
         </div>
-
-        </div>
-
-
+<!-- VIDEO 2 -->
         <div class="player-container">
             <h5 class="form-title center">
                 <i class="material-icons left">live_tv</i> S h a d o w s
@@ -169,7 +155,7 @@
                 <i class="material-icons tiny">volume_off</i>
             </p>
         </div>
-
+<!-- FORMULARIO -->
         <div class="form-subscription-container">
             <form method="POST" action="procesar.php">
                 <h4 class="form-title center">Wanna keep you on tune?</h4>
@@ -193,7 +179,7 @@
             </form>
         </div>
     </div>
-
+<!-- FOOTER -->
     <footer class="page-footer grey darken-4">
         <div class="container">
             <div class="row">
@@ -215,7 +201,7 @@
             <div class="container">© 2026 The Midnight Fan Page</div>
         </div>
     </footer>
-
+<!-- SCRIPTS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="js/efectos.js"></script>
     <script>
@@ -233,11 +219,11 @@
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             
-            // Lógica de sonido
+            // Lógica de sonido para el MODO NOCHE
             if (player && typeof player.unMute === 'function') {
                 if (document.body.classList.contains('dark-mode')) {
                     player.unMute();
-                    player.setVolume(40);
+                    player.setVolume(25);
                     document.getElementById('volume-msg').innerHTML = '<i class="material-icons tiny">volume_up</i> Sonido ambiente activado';
                 } else {
                     player.mute();
@@ -248,3 +234,4 @@
     </script>
 </body>
 </html>
+
