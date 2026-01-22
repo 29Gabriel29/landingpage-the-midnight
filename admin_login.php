@@ -1,6 +1,6 @@
 <?php
 session_start();
-
+// Usamos lo definido en variables de entorno
 define('ADMIN_USER', getenv('ADMIN_USER'));
 define('ADMIN_PASS', getenv('ADMIN_PASS'));
 
