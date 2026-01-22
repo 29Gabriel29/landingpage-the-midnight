@@ -1,13 +1,13 @@
 <?php
 session_start();
 
-// 1. Verificación de sesión
+// Verificación de sesión
 if (empty($_SESSION['admin_logged'])) {
     header("Location: admin_login.php");
     exit;
 }
 
-// 2. Conexión a la base de datos
+// Conexión a la base de datos 
 require_once __DIR__ . '/config.php';
 
 
@@ -32,7 +32,7 @@ try {
     <link rel="stylesheet" href="css/styles.css">
 
 <style>
-    /* 1. Contenedor con scroll para móviles */
+    /* Contenedor con scroll para móviles */
     .tabla-wrapper {
         overflow-x: auto;
         background: rgba(0, 0, 0, 0.6);
@@ -42,14 +42,14 @@ try {
         border: 1px solid rgba(213, 0, 249, 0.3); /* Borde exterior muy fino */
     }
     
-    /* 2. Reset de la tabla para que no se superponga */
+    /* Reset de la tabla para que no se superponga */
     .synth-table {
         border: none !important; /* Quitamos el borde grueso de 8px */
         border-collapse: collapse !important;
         width: 100%;
     }
 
-    /* 3. Estilo de las celdas (Cuerpo) */
+    /* Estilo de las celdas (Cuerpo) */
     .synth-table td {
         padding: 8px 12px !important;
         border-bottom: 1px solid rgba(213, 0, 249, 0.1) !important; /* Línea divisoria sutil */
@@ -57,7 +57,7 @@ try {
         color: #fff;
     }
 
-    /* 4. Encabezados con toque fluorescente */
+    /* Encabezados con toque fluorescente */
     .synth-table th {
         background-color: rgba(74, 20, 140, 0.5);
         color: #ff00ff !important;
@@ -68,7 +68,7 @@ try {
         border-bottom: 2px solid #d500f9 !important; /* Solo línea neón abajo del cabezal */
     }
 
-    /* 5. Botón de eliminar compacto (Corregido) */
+    /* Botón de eliminar compacto (Corregido) */
     .btn-delete {
         all: unset; /* Limpiamos estilos heredados */
         display: inline-block;
@@ -91,7 +91,7 @@ try {
         transform: translateY(-1px);
     }
 
-    /* 6. Evitar que el form de la celda genere espacios extra */
+    /* Evitar que el form de la celda genere espacios extra */
     .synth-table form {
         margin: 0 !important;
         padding: 0 !important;
