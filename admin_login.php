@@ -1,7 +1,9 @@
 <?php
 session_start();
-define('ADMIN_USER', 'admin');
-define('ADMIN_PASS', 'admin123');
+
+define('ADMIN_USER', getenv('ADMIN_USER'));
+define('ADMIN_PASS', getenv('ADMIN_PASS'));
+
 $error = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,11 +37,11 @@ if (!empty($_SESSION['admin_logged'])) {
 </head>
 <body class="valign-wrapper" style="min-height: 100vh;">
 <div class="container center">
-    
+
     <h3 class="dynamic-header">Admin Access</h3>
 
     <?php if ($error): ?>
-        <div class="chip red white-text"><?= $error ?></div>
+        <div class="chip red white-text"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
 
     <form method="post" style="margin-top: 20px;">
@@ -58,7 +60,7 @@ if (!empty($_SESSION['admin_logged'])) {
         <button class="btn-large synth-btn" type="submit" style="width: 100%;">
             Login
         </button>
-        
+
         <div style="margin-top: 30px;">
             <a href="index.html" class="white-text" style="letter-spacing: 2px;">
                 ← Back to Home
