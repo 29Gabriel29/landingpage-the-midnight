@@ -51,7 +51,7 @@ body.dark-mode .dynamic-header {
     text-shadow: 0 0 15px rgba(213, 0, 249, 0.8) !important;
 }
 
-/* --- ESTILO DE LA TABLA DE SHOWS --- */
+/* --- 6. ESTILO DE LA TABLA DE SHOWS --- */
 
 .synth-table-container {
     background: rgba(15, 0, 30, 0.6) !important; /* Fondo tipo cristal */
@@ -129,18 +129,18 @@ body.dark-mode .synth-table-container {
     box-shadow: 0 0 15px rgba(213, 0, 249, 0.2);
 }
 
-/* --- 6. SECCIÓN LOSANGELES (RECUADRO DEL VIDEO) --- */
+/* --- 7. SECCIÓN LOS ANGELES(cancion) (RECUADRO DEL VIDEO [Estilos]) --- */
 .video-heartbeat-container {
     margin-bottom: 40px;
     padding: 30px; /* Espacio interno para que el video no toque el borde */
     border-radius: 20px;
     transition: all 0.5s ease;
-    /* Modo Claro: Recuadro sobrio */
+    /* Modo Claro */
     background: rgba(255, 255, 255, 0.1); 
     border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Modo Noche: Recuadro Neón Púrpura */
+/* Modo Noche -> Recuadro Neón Púrpura */
 body.dark-mode .video-heartbeat-container {
     background: #0a0a0a !important;
     border: 2px solid #d500f9 !important;
@@ -148,7 +148,7 @@ body.dark-mode .video-heartbeat-container {
     animation: neon-flicker-purple 4s infinite alternate;
 }
 
-/* Ajuste para los títulos dentro del recuadro */
+/* Ajuste para los títulos dentro del recuadro (h4) */
 .video-header-text h4 {
     margin-top: 0;
     text-transform: uppercase;
@@ -163,7 +163,7 @@ body.dark-mode .video-header-text h4 {
     text-shadow: 0 0 10px rgba(213, 0, 249, 0.6) !important;
 }
 
-/* --- 7. FORMULARIO DE SUSCRIPCIÓN --- */
+/* --- 8. FORMULARIO DE SUSCRIPCIÓN --- */
 form {
     background: rgba(30, 0, 50, 0.5) !important; /* Tono oscuro para legibilidad */
     border: 2px solid rgba(213, 0, 249, 0.3);
@@ -188,7 +188,7 @@ body.dark-mode form {
     text-shadow: 0 0 10px rgba(213, 0, 249, 0.5);
 }
 
-/* --- 8. INPUTS Y BOTONES --- */
+/* --- 9. INPUTS Y BOTONES --- */
 .input-field label { color: rgba(255, 255, 255, 0.7) !important; }
 .input-field input {
     color: #fff !important;
@@ -215,7 +215,7 @@ body.dark-mode form {
     box-shadow: 0 0 25px #ff00ff;
 }
 
-/* --- 9. REPRODUCTOR SHADOWS (AZUL ELÉCTRICO) --- */
+/* --- 10. REPRODUCTOR SHADOWS -> AZUL ELÉCTRICO --- */
 .player-container {
     background: rgba(255, 255, 255, 0.1);
     border: 2px solid rgba(255, 255, 255, 0.3);
@@ -238,7 +238,7 @@ body.dark-mode .player-container .form-title {
     text-shadow: 0 0 10px rgba(0, 229, 255, 0.8) !important;
 }
 
-/* --- 10. UTILERÍAS Y ANIMACIONES --- */
+/* --- 11. UTILERÍAS Y ANIMACIONES --- */
 .video-container {
     position: relative;
     padding-bottom: 56.25%;
@@ -260,3 +260,4 @@ body.dark-mode .player-container .form-title {
     0%, 100% { box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); }
     50% { box-shadow: 0 0 10px rgba(0, 229, 255, 0.2); }
 }
+
