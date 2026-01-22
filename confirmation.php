@@ -1,7 +1,7 @@
 <?php
 $nombre = $_GET['nombre'] ?? null;
 $error  = $_GET['error'] ?? null;
-
+// Manejo de posibilidades al enviar el formulario
 if ($error) {
     $mainMessage = "Oops!";
     $subMessage  = "Something went wrong. Please try again with a valid name and email.";
