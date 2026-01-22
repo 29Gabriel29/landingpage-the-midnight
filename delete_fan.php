@@ -6,10 +6,7 @@ if (empty($_SESSION['admin_logged'])) {
     exit;
 }
 
-$host = "postgres-db";
-$db   = "appdb";
-$user = "admin";
-$pass = "admin123";
+require_once __DIR__ . '/config.php';
 
 try {
     $conn = new PDO(
